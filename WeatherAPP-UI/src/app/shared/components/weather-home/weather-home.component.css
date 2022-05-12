@@ -1,0 +1,18 @@
+.main-temp {
+  padding-right: 68px;
+  text-align: center;
+  padding-top: 45px;
+  font-size: 80px;
+}
+
+td {
+  border: none;
+}
+
+.verticalLine {
+  border-left: 1px solid;
+}
+
+mat-card {
+  background-image: radial-gradient(circle 941px at 3.8% 14.3%, rgb(138, 136, 178) 19.2%, rgba(102, 249, 214, 1) 75.6%);
+}

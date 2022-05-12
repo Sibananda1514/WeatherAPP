@@ -1,0 +1,18 @@
+<div class="row">
+  <table class="table table-sm">
+    <tbody>
+      <tr style="font-weight: 700;">
+        <td>Now</td>
+        <td *ngFor="let fr of addtionalInfo?.nextHrData">{{fr?.time | date:'shortTime'}}</td>
+      </tr>
+      <tr style="width: 20px; font-weight: 700;">
+        <td><img [src]="current?.condition?.icon"></td>
+        <td *ngFor="let fr of addtionalInfo?.nextHrData"><img [src]="fr?.condition?.icon"></td>
+      </tr>
+      <tr style="text-align: center;font-weight: 500;">
+        <td>{{current.temp_c}}&#176;</td>
+        <td *ngFor="let fr of addtionalInfo?.nextHrData">{{fr?.temp_c}}&#176;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <mat-card *ngIf="this.weatherDataRes?.location">
+        <mat-card-content>
+          <app-weather-header [currentData]="current" [forcastData]="forecast" [locationData]="location">
+          </app-weather-header>
+          <hr>
+          <app-nexthourforecast [addtionalInfo]="addtionalInfo" [currentData]="current"></app-nexthourforecast>
+          <hr>
+          <app-weather-body [currentData]="current" [foreCastData]="forecast"></app-weather-body>
+          <hr>
+          <app-weather-footer (toggelSearchOption)="toggelSideMenu($event)" [currentData]="current"
+            [foreCastData]="forecast"></app-weather-footer>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-4">
+      <div *ngIf="isShow">
+        <app-main-location (currentLocationEvent)="updateCurrentCity($event)">
+        </app-main-location>
+      </div>
+    </div>
+  </div>
+</div>

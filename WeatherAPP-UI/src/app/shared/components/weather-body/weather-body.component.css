@@ -1,0 +1,12 @@
+td {
+  border: none;
+  text-align: center;
+}
+
+.verticalLine {
+  border-left: 1px solid;
+}
+
+.row {
+  height: 157px;
+}

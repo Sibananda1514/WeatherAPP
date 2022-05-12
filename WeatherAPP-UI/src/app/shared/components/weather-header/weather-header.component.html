@@ -1,0 +1,13 @@
+<div class="row" style="height: 99px;margin: 2px;font-weight: 17px;">
+  <div class="col-4">
+    <p><b>{{this.location?.name}}</b></p>
+    <p><b>{{this.current?.condition?.text}}</b></p>
+    <p><b>H: {{this.forecast?.forecastday[0]?.day?.maxtemp_c}}&#176; L:
+        {{this.forecast?.forecastday[0]?.day?.mintemp_c}}&#176; </b></p>
+    <p><b>{{this.location?.localtime |date :'EEEE' }}</b> Today</p>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4">
+    <div class="main-temp">{{this.current?.temp_c }}&#176;</div>
+  </div>
+</div>

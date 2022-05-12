@@ -1,0 +1,7 @@
+.row{
+  height: 110px;
+}
+
+.mat-slider.mat-slider-disabled .mat-slider-track-background, .mat-slider.mat-slider-disabled .mat-slider-track-fill, .mat-slider.mat-slider-disabled .mat-slider-thumb {
+  background-color: rgb(13 51 221 / 67%)  !important;
+}

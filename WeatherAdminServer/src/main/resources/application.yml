@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: WeatherAdminServer
+server:  port: 8093

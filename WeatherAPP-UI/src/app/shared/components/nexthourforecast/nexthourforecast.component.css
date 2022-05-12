@@ -1,0 +1,20 @@
+.main-temp {
+  padding-right: 68px;
+  text-align: center;
+  padding-top: 45px;
+  font-size: 80px;
+}
+td{
+  border: none;
+  text-align: center;
+}
+.verticalLine {
+  border-left: 1px solid ;
+}
+
+.row{
+  height: 110px;
+}
+img{
+  height: 40px;
+}

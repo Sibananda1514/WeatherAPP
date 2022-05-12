@@ -1,0 +1,33 @@
+<div>
+  <div class="ng-autocomplete">
+    <ng-autocomplete #auto [data]="allLocationsData" [searchKeyword]="searchKey" placeholder="Select city"
+      (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)' [itemTemplate]="itemTemplate"
+      [notFoundTemplate]="notFoundTemplate">
+    </ng-autocomplete>
+
+    <ng-template #itemTemplate let-item>
+      <a [innerHTML]="item.cityName" (click)="loadCurrentCityData(item.cityName)"></a>
+    </ng-template>
+
+    <ng-template #notFoundTemplate let-notFound>
+      <div><a (click)="addNewLocation()">Enter Location And Click Here To Add</a></div>
+    </ng-template>
+  </div>
+  <mat-list cdkDropList (cdkDropListDropped)="drop($event)"
+    *ngIf="this.allLocationsData && this.allLocationsData.length">
+    <mat-list-item *ngFor="let location of allLocationsData" cdkDrag (click)="loadCurrentCityData(location.cityName)">
+      <div>
+        <label style="width: 323px; height: 20px; font-weight: 900;"> {{location.cityName}}
+          <span class="float-right">
+            <mat-icon matListIcon (click)="deleteLocation(location.id)">delete</mat-icon>
+          </span>
+        </label>
+        <p style="font-weight: 400;">
+          <span class="max-temp">H:{{location.maxTemp}}&#176;</span> &nbsp;
+          <span class="min-temp">L:{{location.minTemp}}&#176;</span>
+        </p>
+      </div>
+
+    </mat-list-item>
+  </mat-list>
+</div>
