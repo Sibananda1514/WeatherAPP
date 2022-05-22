@@ -2,16 +2,23 @@ server:
   port: 8082
 spring:
   mvc:
-    pathmatch:      matching-strategy: ant-path-matcher
-  zipkin:    base-url: http://localhost:9411/
-  application:    name: LocationService
-  datasource:    url: jdbc:oracle:thin:@localhost:1521:xe
-    username: system
-    password: admin
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  zipkin:
+    base-url: http://localhost:9411/
+  application:
+    name: LocationService
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/weatherapp
+    username: root
+    password: root
   jpa:
-    hibernate:      ddl-auto: update
-    properties:      hibernate:
-        dialect: org.hibernate.dialect.Oracle10gDialect   
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
 
         
 resilience4j:
@@ -28,6 +35,16 @@ resilience4j:
           sliding-window-size: 10
           sliding-window-type: count-based
           
+eureka:
+  instance:
+    appname: location-service
+    prefer-ip-address: true
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://192.168.1.4:8762/eureka/
 
 
   

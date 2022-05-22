@@ -1,5 +1,6 @@
 server:
-  port: 8081spring:
+  port: 8081
+spring:
   boot:
     admin:
       client:
@@ -9,5 +10,15 @@ server:
   mvc:
     pathmatch:
        matching-strategy: ant-path-matcher
-  application:    name: WeatherService
- 
+  application:
+    name: WeatherService
+eureka:
+  instance:
+    appname: WeatherService
+    prefer-ip-address: true
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://192.168.1.4:8762/eureka/ 

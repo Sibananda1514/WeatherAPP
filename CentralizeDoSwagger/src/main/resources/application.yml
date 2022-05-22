@@ -5,16 +5,20 @@ server:
 eureka:
   instance:
     appname: documentation-application
+    prefer-ip-address: true
   client:
     enabled: true
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.1.4:8762/eureka/
       
 swagger: 
   config: 
     refreshrate: 5000
     
     
-spring:  mvc:    pathmatch:      matching-strategy: ant-path-matcher
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher

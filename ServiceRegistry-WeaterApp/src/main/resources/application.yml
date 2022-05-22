@@ -1,6 +1,10 @@
 server:
-  port: 8761
-
-
-eureka:  client:    fetch-registry: false
+  port: 8762
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
     register-with-eureka: false
+    fetch-registry: true
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
